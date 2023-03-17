@@ -13,6 +13,7 @@ type Result struct {
 	Exs    exercise.Exercise
 }
 
+// Compile and run the exercise file.
 func Execute(e exercise.Exercise) (Result, error) {
 	var stdout, stderr bytes.Buffer
 

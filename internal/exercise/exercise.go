@@ -24,6 +24,7 @@ var once sync.Once
 var exercises *[]Exercise
 var err error
 
+// Get list of exercises
 func GetExercises() (*[]Exercise, error) {
 	if exercises == nil {
 		once.Do(func() {
@@ -45,6 +46,7 @@ func GetExercises() (*[]Exercise, error) {
 	return exercises, nil
 }
 
+// Search for particular exercise
 func Search(name string) (*Exercise, error) {
 	exs, err := GetExercises()
 	if err != nil {

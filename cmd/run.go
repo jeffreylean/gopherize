@@ -1,13 +1,14 @@
 package cmd
 
 import (
-	"log"
+	"fmt"
 
 	"github.com/jeffreylean/gopherize/internal/executor"
 	"github.com/jeffreylean/gopherize/internal/exercise"
 	"github.com/spf13/cobra"
 )
 
+// Run specific exercise
 func runCmd() *cobra.Command {
 	var cmd = &cobra.Command{
 		Use:   "run [exercise]",
@@ -21,9 +22,11 @@ func runCmd() *cobra.Command {
 			}
 			res, err := executor.Execute(*exs)
 			if err != nil {
-				return err
+				fmt.Println(res.Err)
+				return nil
 			}
-			log.Println(res.Output)
+
+			fmt.Println(res.Output)
 			return nil
 		},
 	}

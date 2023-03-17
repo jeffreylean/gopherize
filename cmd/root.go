@@ -11,5 +11,6 @@ func Root() *cobra.Command {
 	}
 
 	rootCmd.AddCommand(runCmd())
+	rootCmd.AddCommand(watchCmd())
 	return rootCmd
 }
