@@ -8,7 +8,14 @@ import (
 )
 
 func TestGetExercises(t *testing.T) {
+	os.Chdir("../..")
+	t.Cleanup(func() {
+		os.Chdir("")
+	})
 
+	execs, err := GetExercises()
+	require.NoError(t, err)
+	require.NotEmpty(t, execs)
 }
 
 func TestSearch(t *testing.T) {
