@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 	"sync"
 
 	yaml "gopkg.in/yaml.v3"
@@ -53,9 +54,9 @@ func Search(name string) (*Exercise, error) {
 		return nil, err
 	}
 	for _, each := range *exs {
-		if each.Name == name {
+		if strings.EqualFold(each.Name, name) {
 			return &each, nil
 		}
 	}
-	return nil, fmt.Errorf("No exercise found")
+	return nil, fmt.Errorf("no exercise found")
 }

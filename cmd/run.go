@@ -22,8 +22,7 @@ func runCmd() *cobra.Command {
 			}
 			res, err := executor.Execute(*exs)
 			if err != nil {
-				fmt.Println(res.Err)
-				return nil
+				return err
 			}
 
 			fmt.Println(res.Output)
