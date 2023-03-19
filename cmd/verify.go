@@ -18,9 +18,7 @@ func verifyCmd() *cobra.Command {
 				return err
 			}
 			// Verify all the exercise.
-			if err := verify.Verify(*exercises); err != nil {
-				return err
-			}
+			verify.Verify(*exercises, &verify.Progress{Done: 0, Total: uint64(len(*exercises))})
 			return nil
 		},
 	}
