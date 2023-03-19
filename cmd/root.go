@@ -11,6 +11,6 @@ func Root() *cobra.Command {
 	}
 
 	rootCmd.AddCommand(runCmd())
-	rootCmd.AddCommand(watchCmd())
+	rootCmd.AddCommand(verifyCmd())
 	return rootCmd
 }

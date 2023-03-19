@@ -2,9 +2,11 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
-	"github.com/jeffreylean/gopherize/internal/executor"
 	"github.com/jeffreylean/gopherize/internal/exercise"
+	"github.com/jeffreylean/gopherize/internal/prompt"
+	"github.com/jeffreylean/gopherize/internal/verify"
 	"github.com/spf13/cobra"
 )
 
@@ -20,12 +22,18 @@ func runCmd() *cobra.Command {
 			if err != nil {
 				return err
 			}
-			res, err := executor.Execute(*exs)
-			if err != nil {
-				return err
+			res := exs.Run()
+			if res.Err != "" {
+				prompt.Warn(fmt.Sprintf("Compiling of %s failed! Please try again. Here's the output:", exs.Name))
+				fmt.Println(res.Err)
+				os.Exit(1)
 			}
 
-			fmt.Println(res.Output)
+			// Prompt completion message and verify the state of the exercise.
+			if verify.Completion(*exs, res.Output) {
+				fmt.Println(res.Output)
+				prompt.Success("Successfully ran " + exs.Name)
+			}
 			return nil
 		},
 	}

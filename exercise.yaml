@@ -1,3 +1,6 @@
-- name: helloworld
+- name: intro1
   type: bugfix
-  file: exercise/hello_world/main.go
+  file: exercise/intro/intro1/main.go
+- name: intro2
+  type: bugfix
+  file: exercise/intro/intro2/main.go

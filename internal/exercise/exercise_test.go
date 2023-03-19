@@ -8,9 +8,10 @@ import (
 )
 
 func TestGetExercises(t *testing.T) {
+	p, _ := os.Getwd()
 	os.Chdir("../..")
 	t.Cleanup(func() {
-		os.Chdir("")
+		os.Chdir(p)
 	})
 
 	execs, err := GetExercises()
@@ -19,9 +20,10 @@ func TestGetExercises(t *testing.T) {
 }
 
 func TestSearch(t *testing.T) {
+	p, _ := os.Getwd()
 	os.Chdir("../..")
 	t.Cleanup(func() {
-		os.Chdir("")
+		os.Chdir(p)
 	})
 
 	t.Run("Search with lowercase should works", func(t *testing.T) {
