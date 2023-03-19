@@ -24,8 +24,7 @@ _implement a new feature! ➡️ [open an Issue to discuss it first, then a Pull
 <a name="addex"></a>
 ### Adding an exercise
 
-The first step is to add the exercise! Name the file `exercise/yourTopic/yourTopicN.go`, make sure to
-put in some helpful links, and link to sections of the book in `exercises/yourTopic/README.md`.
+The first step is to add the exercise! Name the file `exercise/yourTopic/main.go`, make sure to put in some helpful links, and link to sections of the book in `exercises/yourTopic/README.md`. If you have multiple exercises, you may name the file `exercise/yourTopic/yourTopicN/main.go`. (For example: `exercise/go-routine/chapter1/main.go`)
 
 Next make sure it runs with `go`. The exercise metadata is stored in `exercise.yaml`.
 
