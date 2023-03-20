@@ -2,6 +2,19 @@
 
 > Gopherize provide exercises that helps go beginner get used to read and write Go!
 
+## Getting Started
+
+You will need to have go installed in your machine. You can do it by visiting [https://go.dev/doc/install]().
+
+Try to run `go version` to make sure go has been download to your machine.
+
+Then just run:
+`go install github.com/jeffreylean/gopherize`
+This will install gopherize command to your machine.
+
+`git clone` this gopherize project to any directory you like.
+Then make sure you `cd` into the project directory and run the command `gopherize` to get started.
+
 ## ToDo
 
 ### Adding exercises
@@ -29,8 +42,6 @@ The syllabus of our golang exercises will be following a very comprehensive go r
 | Type-Unsafe Pointers | |
 | Generics | |
 | Reflection | |
-
-## Getting Started
 
 ## Contributing
 
