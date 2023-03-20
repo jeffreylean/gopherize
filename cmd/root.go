@@ -32,6 +32,9 @@ func Root() *cobra.Command {
 		Long:  b(logo) + "\n" + description,
 	}
 
+	// Disable completion
+	rootCmd.CompletionOptions.DisableDefaultCmd = true
+
 	rootCmd.AddCommand(runCmd())
 	rootCmd.AddCommand(verifyCmd())
 	rootCmd.AddCommand(watchCmd())
