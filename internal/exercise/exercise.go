@@ -14,8 +14,8 @@ import (
 )
 
 const (
-	BugFix = "bugfix"
-	QnA    = "qna"
+	Compile = "compile"
+	Test    = "test"
 )
 
 // Enum for exercise's state
@@ -53,14 +53,31 @@ func (e *Exercise) State() State {
 }
 
 func (e *Exercise) Run() Result {
-	var stdout, stderr bytes.Buffer
+	switch e.Type {
+	case Compile:
+		var stdout, stderr bytes.Buffer
 
-	exec := exec.Command("go", "run", "./"+e.File)
-	exec.Stderr = &stderr
-	exec.Stdout = &stdout
+		exec := exec.Command("go", "run", "./"+e.File)
+		exec.Stderr = &stderr
+		exec.Stdout = &stdout
 
-	exec.Run()
-	return Result{Output: stdout.String(), Err: stderr.String()}
+		exec.Run()
+		return Result{Output: stdout.String(), Err: stderr.String()}
+	case Test:
+		var stdout, stderr bytes.Buffer
+		// Add _test.go prefix to the file name so that go tool chain can run the test.
+		file := strings.Split(e.File, "/")
+		testFileName := strings.Split(file[len(file)-1], ".go")[0] + "_test.go"
+		testFilePath := strings.Replace(e.File, file[len(file)-1], testFileName, 1)
+
+		exec := exec.Command("go", "test", "./"+e.File, "./"+testFilePath)
+		exec.Stderr = &stderr
+		exec.Stdout = &stdout
+
+		exec.Run()
+		return Result{Output: stdout.String(), Err: stderr.String()}
+	}
+	return Result{Output: "", Err: "Unknown exercise type."}
 }
 
 // Get list of exercises

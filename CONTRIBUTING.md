@@ -17,11 +17,13 @@ _fix a bug! ➡️ [open a Pull Request](#prs)_
 _implement a new feature! ➡️ [open an Issue to discuss it first, then a Pull Request](#issues)_
 
 <a name="#src"></a>
+
 ### Working on the source code
 
 `cmd/root.go` contains a simple `gopherize` CLI that connects to most of the other source files.
 
 <a name="addex"></a>
+
 ### Adding an exercise
 
 The first step is to add the exercise! Name the file `exercise/yourTopic/main.go`, make sure to put in some helpful links, and link to sections of the book in `exercises/yourTopic/README.md`. If you have multiple exercises, you may name the file `exercise/yourTopic/yourTopicN/main.go`. (For example: `exercise/go-routine/chapter1/main.go`)
@@ -29,10 +31,11 @@ The first step is to add the exercise! Name the file `exercise/yourTopic/main.go
 Next make sure it runs with `go`. The exercise metadata is stored in `exercise.yaml`.
 
 Add the metadata for your exercise in the correct order in the `exercises` array. If you are unsure of the correct ordering, add it at the bottom and ask in your pull request. The exercise metadata should contain the following:
+
 ```diff
   ...
 + - name: helloworld
-+   type: bugfix
++   type: compile
 +   file: exercise/hello_world/main.go
   ...
 ```
@@ -40,6 +43,7 @@ Add the metadata for your exercise in the correct order in the `exercises` array
 That's all! Feel free to put up a pull request.
 
 <a name="issues"></a>
+
 ### Issues
 
 You can open an issue [here](https://github.com/jeffreylean/gopherize/issues/new).
@@ -50,6 +54,7 @@ If you're reporting a bug, please include the output of the following commands:
 - Your OS name and version
 
 <a name="prs"></a>
+
 ### Pull Requests
 
 Opening a pull request is as easy as forking the repository and committing your
