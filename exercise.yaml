@@ -5,5 +5,5 @@
   type: compile
   file: exercise/intro/intro2/main.go
 - name: variables1
-  type: test
+  type: compile
   file: exercise/constant_and_variables/variables1/variables1.go
