@@ -7,8 +7,14 @@ import "fmt"
 // I AM NOT DONE
 func main() {
 	// Complete the line without changing anything.
-	var hello, world string = 
+	var hello, world string =
 
-    // Print out hello,world
+	//print out hello,world
 	fmt.Printf("%s,%s", hello, world)
+
+	var (
+		one, two, three = "one"
+		four            = 4
+	)
+	fmt.Printf("%s,%s,%s,%d", one, two, three, four)
 }

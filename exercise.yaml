@@ -7,3 +7,12 @@
 - name: variables1
   type: compile
   file: exercise/constant_and_variables/variables1/variables1.go
+- name: variables2
+  type: compile
+  file: exercise/constant_and_variables/variables2/variables2.go
+- name: variables3
+  type: compile
+  file: exercise/constant_and_variables/variables3/variables3.go
+- name: variables4
+  type: compile
+  file: exercise/constant_and_variables/variables4/variables4.go
