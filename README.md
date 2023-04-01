@@ -1,6 +1,6 @@
 # gopherize
 
-> Gopherize provide exercises that helps go beginner get used to read and write Go!
+> Gopherize provide exercises that helps go beginner get used to read and write Go by fixing broken codes. The concept is inspired by [https://github.com/rust-lang/rustlings](rustlings).
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ The syllabus of our golang exercises will be following a very comprehensive go r
 | Exercises | |
 | ----------------------------------------------------- | --- |
 | Intro | ✅ |
-| Constant and Variables | |
+| Constant and Variables | ✅|
 | Common operators | |
 | Code Package and Package Imports | |
 | Expression, Statements | |
