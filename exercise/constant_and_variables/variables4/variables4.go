@@ -1,5 +1,6 @@
 package main
 
+// Make it compile!
 // Scopes of variables and named constants
 
 // I AM NOT DONE

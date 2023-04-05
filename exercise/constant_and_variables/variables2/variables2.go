@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Make it compile!
 // Multiple variables can also be declared together in one variable declaration.
 
 // I AM NOT DONE
