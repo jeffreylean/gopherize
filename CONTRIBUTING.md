@@ -24,13 +24,13 @@ _implement a new feature! ➡️ [open an Issue to discuss it first, then a Pull
 
 <a name="addex"></a>
 
-### Adding an exercise
+### Adding an exercise guidelines
 
-The first step is to add the exercise! Name the file `exercise/yourTopic/main.go`, make sure to put in some helpful links, and link to sections of the book in `exercises/yourTopic/README.md`. If you have multiple exercises, you may name the file `exercise/yourTopic/yourTopicN/main.go`. (For example: `exercise/go-routine/chapter1/main.go`)
-
-Next make sure it runs with `go`. The exercise metadata is stored in `exercise.yaml`.
-
-Add the metadata for your exercise in the correct order in the `exercises` array. If you are unsure of the correct ordering, add it at the bottom and ask in your pull request. The exercise metadata should contain the following:
+- The first step is to add the exercise! Name the file `exercise/yourTopic/main.go`, make sure to put in some helpful links, and link to sections of the book in `exercises/yourTopic/README.md`. If you have multiple exercises, you may name the file `exercise/yourTopic/yourTopicN/main.go`. (For example: `exercise/go-routine/chapter1/main.go`)
+- It's encourage to create a README.md for each topic. The README.md should have an overview about the topic.
+- When designing your exercise, it is encourage to write some comment about the exercise that the your are going to work on. Place these comment at the top of your code just after `package`. You can also include some tips/hint which might helps the user to kickstart.
+- After you had done designing your exercise, remember to add `// I AM NOT DONE` comment on top of the first function in your file.
+- Then add the exercise metadata to the `exercise.yaml` file. Add the metadata for your exercise in the correct order in the `exercises` array. If you are unsure of the correct ordering, add it at the bottom and ask in your pull request. The exercise metadata should contain the following:
 
 ```diff
   ...
@@ -39,6 +39,8 @@ Add the metadata for your exercise in the correct order in the `exercises` array
 +   file: exercise/hello_world/main.go
   ...
 ```
+
+- Finally, you can test your exercise using `gopherize run <your-exercise-name>`
 
 That's all! Feel free to put up a pull request.
 
