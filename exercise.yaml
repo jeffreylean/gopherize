@@ -16,3 +16,15 @@
 - name: variables4
   type: compile
   file: exercise/constant_and_variables/variables4/variables4.go
+- name: packages1
+  type: compile
+  file: exercise/packages/packages1/packages1.go
+- name: packages2
+  type: compile
+  file: exercise/packages/packages2/packages2.go
+- name: packages3
+  type: compile
+  file: exercise/packages/packages3/packages3.go
+- name: packages4
+  type: test
+  file: exercise/packages/packages4/packages4.go

@@ -53,28 +53,35 @@ func (e *Exercise) State() State {
 }
 
 func (e *Exercise) Run() Result {
+	var stdout, stderr bytes.Buffer
 	switch e.Type {
 	case Compile:
-		var stdout, stderr bytes.Buffer
+		exe := exec.Command("go", "run", "./"+e.File)
+		exe.Stderr = &stderr
+		exe.Stdout = &stdout
 
-		exec := exec.Command("go", "run", "./"+e.File)
-		exec.Stderr = &stderr
-		exec.Stdout = &stdout
-
-		exec.Run()
+		exe.Run()
 		return Result{Output: stdout.String(), Err: stderr.String()}
 	case Test:
-		var stdout, stderr bytes.Buffer
 		// Add _test.go prefix to the file name so that go tool chain can run the test.
 		file := strings.Split(e.File, "/")
 		testFileName := strings.Split(file[len(file)-1], ".go")[0] + "_test.go"
 		testFilePath := strings.Replace(e.File, file[len(file)-1], testFileName, 1)
 
-		exec := exec.Command("go", "test", "./"+e.File, "./"+testFilePath)
-		exec.Stderr = &stderr
-		exec.Stdout = &stdout
-
-		exec.Run()
+		exe := exec.Command("go", "test", "./"+e.File, "./"+testFilePath)
+		output, err := exe.CombinedOutput()
+		if err != nil {
+			if exitError, ok := err.(*exec.ExitError); ok {
+				// Exit code of 1 typically means that there are one or more tests failed.
+				if exitError.ExitCode() == 1 {
+					stderr.WriteString(string(output))
+				} else {
+					stderr.WriteString(string(err.Error()))
+				}
+			}
+		} else {
+			stdout.WriteString(string(output))
+		}
 		return Result{Output: stdout.String(), Err: stderr.String()}
 	}
 	return Result{Output: "", Err: "Unknown exercise type."}

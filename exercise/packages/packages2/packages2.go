@@ -1,19 +1,15 @@
-package main
+package packages2
 
 // Make it compile!
-// In Go only exported code elements in a package can be used in the source file which imports the packge.
-// An exported code element uses exported identifier as its name, meaning if the first character of the identifier
-// is in upper case letter, then the identifer is exported, otherwise it is private hence not being export.
-import(
-"github.com/jeffreylean/gopherize/exercise/packages/packages2/lib"
+// In Go, a code package consist of several source files. There source files has to locate in the same folder.
+// The source files in a folder (not including subfolders) must belong to the same package.
+// So, a folder corresponds to a code package, and vice versa. The folder containing the source files of a code package is called the folder of the package.
+// The package name typically are the path to the folder of the package.
+import (
+	"lib"
 )
 
-// I AM NOT DONE
-
-func main(){
-    a,b:=1,2
-
-    println("The sum is",lib.sum(a,b))
+func main() {
+	var a, b int32 = 2, 2
+	println("The sum of a and b is", lib.Sum(a, b))
 }
-
-
