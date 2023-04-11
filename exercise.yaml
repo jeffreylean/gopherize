@@ -28,3 +28,6 @@
 - name: packages4
   type: test
   file: exercise/packages/packages4/packages4.go
+- name: packages5
+  type: compile
+  file: exercise/packages/packages4/packages5.go

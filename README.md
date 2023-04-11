@@ -24,7 +24,7 @@ The syllabus of our golang exercises will be following a very comprehensive go r
 | ----------------------------------------------------- | --- |
 | Intro | ✅ |
 | Constant and Variables | ✅|
-| Code Package and Package Imports | |
+| Code Package and Package Imports | ✅ |
 | Expression, Statements | |
 | Basic control Flows | |
 | Goroutines, Deferred Function Calls and panic/Recover | |
