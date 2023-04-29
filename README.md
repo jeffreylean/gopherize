@@ -1,10 +1,10 @@
 # gopherize
 
-> Gopherize provide exercises that helps go beginner get used to read and write Go by fixing broken codes. The concept is inspired by [https://github.com/rust-lang/rustlings](rustlings).
+> Gopherize provide exercises that helps go beginner get used to read and write Go by fixing broken codes. The concept is inspired by [rustlings](https://github.com/rust-lang/rustlings).
 
 ## Getting Started
 
-You will need to have go installed in your machine. You can do it by visiting [https://go.dev/doc/install]().
+You will need to have go installed in your machine. You can do it by visiting [](https://go.dev/doc/install).
 
 Try to run `go version` to make sure go has been download to your machine.
 
@@ -25,7 +25,7 @@ The syllabus of our golang exercises will be following a very comprehensive go r
 | Intro | ✅ |
 | Constant and Variables | ✅|
 | Code Package and Package Imports | ✅ |
-| Basic control Flows | |
+| Basic control Flows | ✅ |
 | Goroutines, Deferred Function Calls and panic/Recover | |
 | Type system | |
 | Pointers | |

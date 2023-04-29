@@ -1,9 +1,11 @@
+# intro
 - name: intro1
   type: compile
   file: exercise/intro/intro1/main.go
 - name: intro2
   type: compile
   file: exercise/intro/intro2/main.go
+# constant and variables
 - name: variables1
   type: compile
   file: exercise/constant_and_variables/variables1/variables1.go
@@ -16,6 +18,7 @@
 - name: variables4
   type: compile
   file: exercise/constant_and_variables/variables4/variables4.go
+  # packages
 - name: packages1
   type: compile
   file: exercise/packages/packages1/packages1.go
@@ -31,3 +34,22 @@
 - name: packages5
   type: compile
   file: exercise/packages/packages4/packages5.go
+  # control flow
+- name: ifelse
+  type: test
+  file: exercise/control_flow/if_else/if_else.go
+- name: for1
+  type: compile
+  file: exercise/control_flow/for/for1/for1.go
+- name: for2
+  type: test
+  file: exercise/control_flow/for/for2/for2.go
+- name: for3
+  type: compile
+  file: exercise/control_flow/for/for3/for3.go
+- name: switchcase1
+  type: test
+  file: exercise/control_flow/switch_case/switch1/switch_case1.go
+- name: switchcase2
+  type: compile
+  file: exercise/control_flow/switch_case/switch2/switch_case2.go

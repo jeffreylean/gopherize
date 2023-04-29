@@ -1,4 +1,4 @@
-package for1
+package main
 
 // Make it compile!
 // Complete the for loop with 10 loops.
