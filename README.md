@@ -29,7 +29,7 @@ The syllabus of our golang exercises will be following a very comprehensive go r
 | Goroutines, Deferred Function Calls and panic/Recover | |
 | Type system | |
 | Pointers | |
-| Structs | |
+| Structs |✅ |
 | Value parts | |
 | Arrays, slice and maps | |
 | Strings | |

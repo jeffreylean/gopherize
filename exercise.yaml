@@ -53,3 +53,13 @@
 - name: switchcase2
   type: compile
   file: exercise/control_flow/switch_case/switch2/switch_case2.go
+# struct
+- name: struct1
+  type: compile
+  file: exercise/struct/struct1/struct1.go
+- name: struct2
+  type: compile
+  file: exercise/struct/struct2/struct2.go
+- name: struct3
+  type: compile
+  file: exercise/struct/struct3/struct3.go
